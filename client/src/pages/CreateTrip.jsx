@@ -19,7 +19,16 @@ const CreateTrip = () => {
         event.preventDefault();
 
 
-        
+        const options = {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(trip)
+        }
+
+        fetch('/api/trips', options)
+        window.location.href = '/'
     }
 
 
