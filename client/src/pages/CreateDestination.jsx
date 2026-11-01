@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './CreateDestination.css'
 
-const CreateDestination = () => {
+const CreateDestination = ({ api_url }) => {
 
     const [destination, setDestination] = useState({destination: "", description: "", city: "", country: "", img_url: "", flag_img_url: "" })
 
@@ -27,7 +27,7 @@ const CreateDestination = () => {
             body: JSON.stringify(destination)
         }
 
-        await fetch('/api/destinations', options)
+        await fetch(`${api_url}/api/destinations`, options)
         window.location.href = '/destinations'
     }
 

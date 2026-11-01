@@ -14,7 +14,7 @@ const ActivityBtn = (props) =>  {
       body: JSON.stringify({ num_votes: num_votes + 1 })
     }
 
-    fetch('/api/activities/' + props.id, options)
+    fetch(`${props.api_url}/api/activities/${props.id}`, options)
     setNumVotes((num_votes) => num_votes + 1)
   }
 

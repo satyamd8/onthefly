@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import AddTripOptionCard from '../components/AddTripOptionCard';
 
 
-const AddToTrip = (props) => {
+const AddToTrip = ({ data, api_url }) => {
 
     const [trips, setTrips] = useState([]);
     
 
     useEffect(() => {
-        setTrips(props.data);
-    }, [props]);
+        setTrips(data);
+    }, [data]);
     
     return (
         <div className="AddToTrip">
@@ -20,7 +20,8 @@ const AddToTrip = (props) => {
                          id={trip.id} 
                          title={trip.title} 
                          description={trip.description} 
-                         img_url={trip.img_url}  />
+                         img_url={trip.img_url}
+                         api_url={api_url} />
                 ) : <h3 className="noResults">{'No Trips Yet 😞'}</h3>
             }
         </div>  
