@@ -19,7 +19,7 @@ const App = () => {
   const [destinations, setDestinations] = useState([]);
   const [user, setUser] = useState(null);
 
-  const API_URL = 'http://localhost:3001'
+  const API_URL = import.meta.env.PROD ? 'https://server-pwf1.onrender.com' : '/api'
 
   useEffect(() => {
     const getUser = async () => {
