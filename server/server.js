@@ -14,13 +14,14 @@ const app = express();
 app.set("trust proxy", 1);
 
 app.use(session({
-   secret: 'codepath',
+   secret: process.env.SESSION_SECRET || 'codepath',
    resave: false,
    saveUninitialized: false,
+   proxy: true,
    cookie: {
       secure: true,
       httpOnly: true,
-      sameSite: "lax"
+      sameSite: "none"
    }
 }))
 
