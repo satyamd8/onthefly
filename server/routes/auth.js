@@ -38,8 +38,8 @@ router.get(
 router.get(
    "/github/callback",
    passport.authenticate("github", {
-      successRedirect: "https://server-pwf1.onrender.com",
-      failureRedirect: "https://server-pwf1.onrender.com/destinations",
+      successRedirect: "https://client-41vq.onrender.com/",
+      failureRedirect: "https://client-41vq.onrender.com/destinations",
    }),
 );
 
