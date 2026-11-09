@@ -14,7 +14,12 @@ const app = express();
 app.use(session({
    secret: 'codepath',
    resave: false,
-   saveUninitialized: true
+   saveUninitialized: false,
+   cookie: {
+      secure: true,
+      httpOnly: true,
+      sameSite: "lax"
+   }
 }))
 
 app.use(express.json());
